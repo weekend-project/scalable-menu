@@ -3,44 +3,38 @@ import java.util.Scanner;
 
 public class OptionC {
 
-    private static Scanner reader = new Scanner(System.in);
-    private static Menu optionCMenu = new Menu();
-    private static String optionCBanner = "option c banner";
-    private static String optionA = "option a";
-    private static String optionB = "option b";
-    private static String optionC = "option c";
-    private static String optionD = "option d";
+    private static final Scanner reader = new Scanner(System.in);
+    private static final Menu optionCMenu = new Menu();
+    private static final String optionCBanner = "option c banner";
+    private static final String optionA = "option a";
+    private static final String optionB = "option b";
+    private static final String optionC = "option c";
+    private static final String optionD = "option d";
 
     public static void gotoOptionCMenu() throws IOException {
-        Menu.drawMenu(optionCMenu.charsTitle, optionCMenu.charsBanner, optionCMenu.charsRow, Menu.TITLE, optionCBanner,
+        Menu.drawMenu(optionCMenu.charsTitle,
+                optionCMenu.charsBanner,
+                optionCMenu.charsRow,
+                Menu.TITLE,
+                optionCBanner,
                 Menu.setOptionNames(optionA, optionB, optionC, optionD),
-                Menu.setOptionNumbers('1', '2', '3', '0'), Menu.width); // 0 exits
-        System.out.print("Enter your choice here: ");
-        int userVolChoice = reader.nextInt();
+                Menu.setOptionNumbers('1', '2', '3', '0'), // TODO these chars should be set elsewhere
+                Menu.width); // 0 exits
 
-        if (userVolChoice == 0) {
+        System.out.print("Enter your choice here: ");
+        int userOptionCChoice = reader.nextInt();
+
+        // TODO need a while loop to catch entries < 0 or > 3 (see line 46 in Main.java)
+        if (userOptionCChoice == 0) {
             Main.goToMainMenu();
-        } else if (userVolChoice == 1) {
-            gotoFlour();
-        } else if (userVolChoice == 2) {
-            gotoWater();
-        } else if (userVolChoice == 3) {
-            gotoMilk();
+        } else if (userOptionCChoice == 1) {
+            OptionA.gotoOptionAMenu();
+        } else if (userOptionCChoice == 2) {
+            OptionB.gotoOptionBMenu();
+        } else if (userOptionCChoice == 3) {
+            gotoOptionCMenu();
         } else {
             Main.goToMainMenu();
         }
     }
-
-    public static void gotoFlour() throws IOException {
-        gotoOptionCMenu();
-    }
-
-    public static void gotoWater() throws IOException {
-        gotoOptionCMenu();
-    }
-
-    public static void gotoMilk() throws IOException {
-        gotoOptionCMenu();
-    }
-
 }

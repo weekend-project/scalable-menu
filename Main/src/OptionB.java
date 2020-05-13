@@ -25,6 +25,7 @@ public class OptionB {
         int userOptionBChoice = reader.nextInt();
 
         // TODO need a while loop to catch entries < 0 or > 3 (see line 46 in Main.java)
+        while (userOptionBChoice < 0 || userOptionBChoice > 3) {
         if (userOptionBChoice == 0) {
             Main.goToMainMenu();
         } else if (userOptionBChoice == 1) {
@@ -36,5 +37,6 @@ public class OptionB {
         } else {
             Main.goToMainMenu();
         }
+         }
     }
 }

@@ -26,6 +26,7 @@ public class OptionA {
 
 
         // TODO need a while loop to catch entries < 0 or > 3 (see line 46 in Main.java)
+         while (userOptionAChoice < 0 || userOptionAChoice > 3) {
         if (userOptionAChoice == 0) {
             Main.goToMainMenu();
         } else if (userOptionAChoice == 1) {
@@ -37,5 +38,6 @@ public class OptionA {
         } else {
             Main.goToMainMenu();
         }
+         }
     }
 }

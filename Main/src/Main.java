@@ -15,10 +15,10 @@ public class Main {
     public static void goToMainMenu() throws IOException {
 
         String banner = "banner title here";
-        String optionA = "option a";
-        String optionB = "option b";
-        String optionC = "option c";
-        String optionD = "option d";
+        String optionA = "New Game";
+        String optionB = "Options";
+        String optionC = "How to play";
+        String optionD = "Exit";
 
         /*
             When calling drawMenu, use Menu.java to change some parameters, and pass in custom parameters when calling

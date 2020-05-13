@@ -28,8 +28,15 @@ public class Menu {
      * @param optionNums  ArrayList to hold the numbers for each optionName
      * @param width       how wide the menu box will be (number of characters wide)
      */
-    public static void drawMenu(char[] charsTitle, char[] charsBanner, char[] charsRow, String title, String banner,
-                                ArrayList<String> optionNames, ArrayList<Character> optionNums, int width) {
+    public static void drawMenu(char[] charsTitle,
+                                char[] charsBanner,
+                                char[] charsRow,
+                                String title,
+                                String banner,
+                                ArrayList<String> optionNames,
+                                ArrayList<Character> optionNums,
+                                int width) {
+
         drawTitle(charsTitle, title, width); // draws the title bar
         drawBanner(charsBanner, banner, width); // draws the banner bar
         drawRow(charsRow[0], charsRow[1], width); // draws a generic row
@@ -196,8 +203,13 @@ public class Menu {
         return optionName.length() + separator.length() + 1; // the + 1 is to account for the length of the char
     }
 
-    public static void drawRowWithOption(char outsideChar, char inCharLeft, char inCharRight, String optionName,
-                                         char optionNum, int width, int maxLength) {
+    public static void drawRowWithOption(char outsideChar,
+                                         char inCharLeft,
+                                         char inCharRight,
+                                         String optionName,
+                                         char optionNum,
+                                         int width,
+                                         int maxLength) {
 
         int optionLength = optionName.length() + separator.length() + 1; // + 1 is to account for the length of the char optionNum
         int difference = maxLength - optionLength;
